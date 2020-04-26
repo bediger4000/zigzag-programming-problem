@@ -70,7 +70,7 @@ If the height of the rune equals the pass number,
 print out the rune.
 Otherwise print out a space character.
 
-## Comparison
+## Analysis
 
 |Factor       |Advantage    |
 |-------------|-------------|
@@ -80,18 +80,22 @@ Otherwise print out a space character.
 |Cognitive Complexity| method 1|
 
 Method 1 allocates a potentially large block of heap.
-Moethod 2 just prints things out on the fly.
+Method 2 just prints things out on the fly.
 
 Method 1 makes a single pass over the input string,
 method 2 makes `k` passes.
+
+It looks to me like you trade the space used by method 1
+for the multiple passes used by method 2.
+A classic time vs space tradeoff.
 
 As I implemented them, both methods print out trailing blanks,
 blanks on upper lines that are "above" the height of the last upward zag,
 or below the last downward zig.
 Both of them could implement something to prevent this,
-like `string.TrimRight` on method 1, a simple check on row index for method 2.
+like the Go standard library function `strings.TrimRight` on method 1, a simple check on row index for method 2.
 
-The "cognitive complexity" is pretty informal.
+The "cognitive complexity" I cite is pretty informal.
 It seems to me it's harder to get method 2 correct.
 I wrote the method 1 code first, and only after seeing how to implement "up and down"
 did I consider method 2 a possiblity.
