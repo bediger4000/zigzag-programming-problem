@@ -1,6 +1,6 @@
 # Daily Coding Problem: Problem #521 [Medium]  
 
-Another Daily Coding Problem!
+Let's beat another Daily Coding Problem to death!
 
 ### Problem Statement
 
@@ -15,8 +15,8 @@ For example, given the sentence "thisisazigzag" and k = 4, you should print:
       i i   i z
        s     g
 
-I'm doing this in Go, which has the advantage of the `range` built-in to allow
-less mistake-prone array index and value retrieval.
+I'm doing this in Go, which has the advantage of the `range` built-in that
+enourages less mistake-prone array index and value retrieval.
 
 Go uses Unicde strings in UTF-8 format, so each input string gets normalized
 so that seperate composable code points get composed.
